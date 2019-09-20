@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'post/index'
+  get 'post/show'
+  get 'post/edit'
   get '/about',to: 'users#about'
 
   devise_for :users, controllers: {
