@@ -1,0 +1,17 @@
+header.navbar.navbar-fixed-top.navbar-inverse
+    .container
+        nav
+            ul.nav.navbar-nav.navbar-right
+                li = link_to 'home',root_path
+                li = link_to 'about',about_path
+                li = link_to 'index',users_path
+                / devise関連
+                li = link_to 'log in',new_user_session_path
+                li = link_to 'sign up',new_user_registration_path
+                li = link_to 'Forgot your password?',new_user_password_path
+                li = link_to 'ログアウト', destroy_user_session_path , method: :delete
+                li = link_to '編集',edit_user_registration_path
+                - if user_signed_in?
+                    li = link_to 'show', current_user
+
+
