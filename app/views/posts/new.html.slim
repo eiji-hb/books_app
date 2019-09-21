@@ -1,2 +1,12 @@
-h1 Posts#new
-p Find me in app/views/posts/new.html.slim
+h1 POST 新規投稿
+
+= form_with model: @post, local: true do |f|
+    .field
+        = f.label :title
+        br
+        = f.text_field :title, class: 'form-control'
+    .field
+        = f.label :content
+        br
+        = f.text_field :content, class: 'form-control'
+    = f.submit nil, class: 'btn btn-primary'
