@@ -1,2 +1,18 @@
-h1 Posts#index
-p Find me in app/views/posts/index.html.slim
+h1 Post一覧
+
+= link_to "新規投稿",new_post_path, class: 'btn btn-primary'
+
+.mb-3
+table.table.table0-hover
+    thead.thead-default
+        tr
+            th  title
+            th  content
+        tbody
+            - @posts.each do |post|
+                tr
+                    td = link_to post.title ,post_path(post)
+                    td = post.content
+                    td
+                        = link_to '編集',edit_post_path(post),class: 'btn btn-primary mr-2 '
+                        = link_to '消去',post, method: :delete,class: 'btn btn-danger'

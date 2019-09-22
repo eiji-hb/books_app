@@ -1,6 +1,24 @@
-h1 Posts#show
-p Find me in app/views/posts/show.html.slim
-p
-    = @post.title
-    br
-    = @post.content
+h1 Post_show
+
+table.table.table-hover
+ tbody
+    tr
+        th ID
+        td = @post.id
+    tr
+        th Title
+        td = @post.title
+    tr
+        th content
+        td = @post.content
+    tr
+        th created
+        td = @post.created_at
+    tr
+        th updated
+        td = @post.updated_at
+
+= link_to 'edit',edit_post_path,class: 'btn btn-primary'
+= link_to 'destroy',@post, method: :delete,class: 'btn btn-danger'
+
+
