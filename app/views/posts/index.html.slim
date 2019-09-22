@@ -8,11 +8,13 @@ table.table.table0-hover
         tr
             th  title
             th  content
+            th  user_id
         tbody
             - @posts.each do |post|
                 tr
                     td = link_to post.title ,post_path(post)
                     td = post.content
+                    td = post.user_id
                     td
                         = link_to '編集',edit_post_path(post),class: 'btn btn-primary mr-2 '
                         = link_to '消去',post, method: :delete,class: 'btn btn-danger'
