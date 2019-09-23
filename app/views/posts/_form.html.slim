@@ -9,6 +9,6 @@
         = f.text_field :content, class: 'form-control'
     .field
         = f.label :image_data
-        = f.hidden_field :image, value: @post.cached_image_data
+        / = f.hidden_field :image, value: @post.cached_image_data
         = f.file_field :image
     = f.submit nil, class: 'btn btn-primary'
