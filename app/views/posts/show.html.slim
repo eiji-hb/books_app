@@ -16,7 +16,7 @@ table.table.table-hover
         td = @post.content
     tr
         th  image
-        td = image_tag @post.image_url
+        td = image_tag  @post.image[:small].url
     tr
         th created
         td = @post.created_at
