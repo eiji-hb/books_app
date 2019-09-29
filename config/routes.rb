@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  get 'books/book'
   get '/about',to: 'users#about'
 
   devise_for :users, controllers: {
